@@ -5,24 +5,25 @@
 1. Common CSS and helpers
 2. Global CSS
 3. Left Part Content (Sidebar) CSS
-    3.1. Menu CSS
-4. Right Part Content CSS
-5. Home Section CSS
-6. Responsive CSS
-7. Footer CSS
+4. Navi Menu CSS
+5. Right Part Content CSS
+6. Home Section CSS
+7. Responsive CSS
+8. Footer CSS
 
 -------------------------------------------------------------------*/
 
 /* ===================================
     1. Common CSS and helpers
 ====================================== */
-$site-color-primary: #4d9633;
+$site-color-primary: #6fa855;
 $site-color-secondary: #efefef;
 $site-color-accent: #094200;
 
+$site-text-color: #fff;
+
 @import url('common.scss');
 @import url('helpers.scss');
-@import url('menu.scss');
 
 /* ===================================
     2. Global CSS
@@ -87,7 +88,7 @@ body {
 body a {
   cursor: pointer;
   text-decoration: none;
-  color: #fff;
+  color: $site-text-color;
   transition: color 0.3s linear;
 }
 
@@ -383,7 +384,7 @@ a.button:hover {
 }
 
 /* ===================================
-    3.1. Menu CSS
+    4. Navi menu CSS
 ====================================== */
 
 .menu-wrapper {
@@ -393,7 +394,7 @@ a.button:hover {
 .menu-holder {
   box-shadow: 1px 1px 10px #071923;
   padding: 120px 50px 0 75px;
-  background-color: $site-color-primary;
+  background-color: $site-color-accent;
   width: 380px;
   height: 100%;
   min-height: 100vh;
@@ -425,7 +426,7 @@ a.button:hover {
 .sm-clean a:hover,
 .sm-clean a:focus,
 .sm-clean a:active {
-  color: #ffffff;
+  color: $site-text-color;
   padding: 5px 0;
   font-size: 28px;
   line-height: 50px;
@@ -437,7 +438,7 @@ a.button:hover {
   display: block;
   width: 0;
   height: 16px;
-  background-color: $site-color-accent;
+  background-color: $site-color-primary;
   transition: width 0.3s;
   position: absolute;
   left: -5%;
@@ -466,14 +467,14 @@ a.button:hover {
 }
 
 .main-menu.sm-clean .sub-menu li a {
-  color: #848484;
+  color: $site-text-color;
   cursor: pointer;
   text-transform: uppercase;
   font-size: 14px;
 }
 
 /* ===================================
-    4. Right Part Content CSS
+    5. Right Part Content CSS
 ====================================== */
 
 .content-banner {
@@ -506,7 +507,7 @@ a.button:hover {
 
 .section-wrapper,
 .page-wrapper {
-  color: #fff;
+  color: $site-text-color;
   padding: 2rem;
 }
 
@@ -536,7 +537,7 @@ h2.section-title {
 }
 
 /* ===================================
-    5. Home Section CSS
+    6. Home Section CSS
 ====================================== */
 
 .logo {
@@ -556,7 +557,7 @@ h2.section-title {
 }
 
 .message {
-  color: #fff;
+  color: $site-text-color;
   text-decoration: underline;
 }
 
@@ -594,7 +595,7 @@ h2.section-title {
 }
 
 h1.entry-title {
-  color: #fff;
+  color: $site-text-color;
   font-size: 5rem;
   font-weight: 800;
   line-height: 94px;
@@ -645,10 +646,6 @@ h1.entry-title {
 
   .icon-scroll {
     bottom: 17px;
-  }
-
-  .section {
-    padding-top: 3rem;
   }
 
   .content-right-wrapper > div:last-of-type {
@@ -978,11 +975,11 @@ h1.entry-title {
 }
 
 /* ===================================
-    7. Footer CSS
+    8. Footer CSS
 ====================================== */
 .footer {
   background-color: $site-color-accent;
-  color: #fff;
+  color: $site-text-color;
   font-size: 0.8rem;
   padding: 1rem;
   text-align: center;

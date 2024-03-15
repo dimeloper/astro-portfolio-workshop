@@ -7,7 +7,7 @@ import treeImage from '../assets/images/tree-banner.webp';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to my Portfolio.">
+<Layout title="Portfolio Workshop">
   <!-- Home Section -->
   <section id="home" class="section full-width-section">
     <div class="section-wrapper">
@@ -105,7 +105,7 @@ import Card from '../components/Card.astro';
   }
 
   .message {
-    color: #aaa;
+    color: #666;
     cursor: pointer;
     text-decoration: underline;
   }
@@ -121,7 +121,7 @@ import Card from '../components/Card.astro';
     top: 86px;
     right: 16px;
     width: 96px;
-    border: 5px white solid;
+    border: 3px white solid;
     border-radius: 50%;
   }
 
@@ -144,12 +144,22 @@ import Card from '../components/Card.astro';
     letter-spacing: 0.3rem;
     margin-top: 0;
     margin-bottom: 1rem;
+    text-align: center;
+
+    @media (min-width: 720px) {
+      text-align: left;
+    }
   }
 
   .site-info {
     color: #666;
     margin-top: 1rem;
     margin-bottom: 3rem;
+    text-align: center;
+
+    @media (min-width: 720px) {
+      text-align: left;
+    }
   }
 
   .link {
@@ -200,7 +210,7 @@ import Card from '../components/Card.astro';
 
   .home-banner {
     flex: 1 0 0;
-    height: 100%;
+    min-height: 520px; /* CLS important */
   }
 
   @media screen and (max-width: 768px) {
