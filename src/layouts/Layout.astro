@@ -97,22 +97,23 @@ const { title } = Astro.props;
     const menuButton = document.querySelector('#toggle');
     const mobileMenu = document.querySelector('#mobile-menu');
 
-    menuButton.addEventListener('click', () => {
+    menuButton?.addEventListener('click', () => {
         toggleMenu();
     });
 
-    addEventListener('hashchange', (event) => {
+
+    addEventListener('hashchange', () => {
         closeMenu();
     });
 
     function closeMenu() {
-        menuButton.classList.remove('on');
-        mobileMenu.classList.remove('menu-holder--open');
+        menuButton?.classList.remove('on');
+        mobileMenu?.classList.remove('menu-holder--open');
     }
 
     function toggleMenu() {
-        menuButton.classList.toggle('on');
-        mobileMenu.classList.toggle('menu-holder--open');
+        menuButton?.classList.toggle('on');
+        mobileMenu?.classList.toggle('menu-holder--open');
     }
 </script>
 </body>

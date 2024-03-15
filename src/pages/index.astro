@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Layout.astro';
 import meImage from '../assets/images/bulbasaur.jpeg';
 import treeImage from '../assets/images/tree-banner.webp';
+import Card from '../components/Card.astro';
 ---
 
 <Layout title="Welcome to my Portfolio.">
@@ -72,6 +73,16 @@ import treeImage from '../assets/images/tree-banner.webp';
           <a href="/portfolio" class="button">Find out more</a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-wrapper block">
+      <Card
+              href="https://astro.build/chat/"
+              title="Astro Community"
+              body="Come say hi to our amazing Discord community. ❤️"
+      />
     </div>
   </div>
 </Layout>
@@ -152,7 +163,7 @@ import treeImage from '../assets/images/tree-banner.webp';
   }
 
   .home-content {
-    flex: 0 0 370px;
+    flex: 1 0 370px;
     padding: 2rem;
   }
 
