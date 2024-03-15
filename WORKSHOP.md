@@ -40,6 +40,20 @@ their versions: `git --version`, `nodejs -v` and `npm -v`.
 
 Choose your project name, include Typescript, initialise a Git repository.
 
+## Using the built-in astro image component
+
+Loading images in astro is fairly simple and if they are kept in `src/` Astro will transform, optimize and bundle them.
+If you want to disable the default optimization place your images in the `/public` directory.
+
+```javascript
+import treeImage from '../assets/images/tree-banner.webp';
+```
+
+```html
+
+<Image src={treeImage} alt="Banner" />
+```
+
 ## Add astro-icon in order to gain access to svg icons
 
 Go into the project directory and run:
@@ -53,4 +67,10 @@ Now we can use icons as such:
 
 ```html
 <Icon class="astro-icon" name="mdi:emoticon-outline" />
+```
+
+## Running the project locally
+
+```shell
+npm run dev
 ```
