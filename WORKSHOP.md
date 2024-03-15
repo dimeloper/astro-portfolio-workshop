@@ -36,11 +36,21 @@ their versions: `git --version`, `nodejs -v` and `npm -v`.
 
 ## Kick off a new Astro project
 
-`npm create create astro@latest`
+`npm run create astro@latest`
 
 Choose your project name, include Typescript, initialise a Git repository.
 
-## Add tailwind
+## Add astro-icon in order to gain access to svg icons
 
 Go into the project directory and run:
-`npm run astro add tailwind`
+`npm run astro add astro-icon`
+
+This will include the Icon library configuration into our project.
+Then we will also need to add an icon set, in our case the Material Design Icons:
+`npm install @iconify-json/mdi`
+
+Now we can use icons as such:
+
+```html
+<Icon class="astro-icon" name="mdi:emoticon-outline" />
+```

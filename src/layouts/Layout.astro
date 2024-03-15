@@ -1,6 +1,12 @@
 ---
+import '@fontsource/open-sans';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import companyImage from '../assets/images/company-sample.png';
+import '../assets/styles/main.scss';
+
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -8,44 +14,106 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Astro description" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+</head>
+<body>
+<div id="content" class="site-content">
+  <div class="content-left">
+    <div class="content-left-wrapper">
+      <header>
+        <div class="toggle-holder hide-only-on-desktop">
+          <div id="toggle">
+            <div class="menu-line"></div>
+          </div>
+        </div>
+        <a class="header-logo" href="/">
+          <Image src={companyImage} alt="company" />
+        </a>
+
+        <div class="top-pagination hide-on-mobile">
+          <ul class="main-menu sm sm-clean">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#about-me">About Me</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div id="mobile-menu" class="menu-holder">
+          <div class="menu-wrapper relative">
+            <nav id="header-main-menu">
+              <ul class="main-menu sm sm-clean">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about-me">About Me</a></li>
+                <li><a href="/#contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="my-info-wrapper">
+          <div class="my-info">
+            <p class="my-info-title">NAME</p>
+            <p class="my-info-content">Here is my name</p>
+          </div>
+
+          <div class="my-info">
+            <p class="my-info-title">Profession</p>
+            <p class="my-info-content">This is my profession</p>
+          </div>
+
+          <div class="my-info">
+            <p class="my-info-title">EMAIL</p>
+            <p class="my-info-content">contact@me.com</p>
+          </div>
+        </div>
+
+        <div class="big-num">
+          <div class="icon-scroll"></div>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="content-right">
+    <div class="content-right-wrapper">
+      <slot />
+    </div>
+
+    <footer>
+      <div class="footer">
+        © Building a portfolio page 2024 | Developed by ME
+        <Icon class="astro-icon" name="mdi:emoticon-outline" />
+      </div>
+    </footer>
+  </div>
+</div>
+<script>
+    const menuButton = document.querySelector('#toggle');
+    const mobileMenu = document.querySelector('#mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        toggleMenu();
+    });
+
+    addEventListener('hashchange', (event) => {
+        closeMenu();
+    });
+
+    function closeMenu() {
+        menuButton.classList.remove('on');
+        mobileMenu.classList.remove('menu-holder--open');
+    }
+
+    function toggleMenu() {
+        menuButton.classList.toggle('on');
+        mobileMenu.classList.toggle('menu-holder--open');
+    }
+</script>
+</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

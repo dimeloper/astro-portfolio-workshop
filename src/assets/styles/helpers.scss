@@ -1,0 +1,17 @@
+@media screen and (min-width: 1020px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .hide-only-on-desktop {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
