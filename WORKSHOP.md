@@ -133,3 +133,9 @@ deployed too.
 - Pagespeed insights: https://pagespeed.web.dev/
 - Resize images online: https://imageresizer.com/
 - Convert images to webp online: https://convertio.co/jpg-webp/
+
+## Stay in touch
+
+- My Medium [profile](https://medium.com/@dimeloper)
+- My Dev.to [profile](https://dev.to/dimeloper)
+- My own portfolio website: https://dimeloper.com/

@@ -20,36 +20,36 @@ import ReactRegisterForm from '../components-react/ReactForm/ReactForm';
         <a class="mobile-avatar" href="/#home">
           <Image src={meImage} alt="MYSELF" />
         </a>
-        <p class="site-info">
+        <div class="site-info">
           This is my portfolio page which I started building during the workshop.
           <a class="message" href="#contact">Get in touch</a>!
-        </p>
 
-        <div class="social-links">
-          <a href="mailto:contact@mail.me" aria-label="Get in touch via email.">
-            <Icon name="mdi:envelope" />
-          </a>
-          <a
-                  href="https://instagram.com/username"
-                  aria-label="Follow me on instagram."
-                  target="_blank"
-          >
-            <Icon name="mdi:instagram" />
-          </a>
-          <a
-                  href="https://linkedin.com/in/username"
-                  aria-label="Connect with me on LinkedIn."
-                  target="_blank"
-          >
-            <Icon name="mdi:linkedin" />
-          </a>
-          <a
-                  href="https://twitter.com/username"
-                  aria-label="Follow me on Twitter."
-                  target="_blank"
-          >
-            <Icon name="mdi:twitter" />
-          </a>
+          <div class="social-links">
+            <a href="mailto:contact@mail.me" aria-label="Get in touch via email.">
+              <Icon name="mdi:envelope" />
+            </a>
+            <a
+                    href="https://instagram.com/username"
+                    aria-label="Follow me on instagram."
+                    target="_blank"
+            >
+              <Icon name="mdi:instagram" />
+            </a>
+            <a
+                    href="https://linkedin.com/in/username"
+                    aria-label="Connect with me on LinkedIn."
+                    target="_blank"
+            >
+              <Icon name="mdi:linkedin" />
+            </a>
+            <a
+                    href="https://twitter.com/username"
+                    aria-label="Follow me on Twitter."
+                    target="_blank"
+            >
+              <Icon name="mdi:twitter" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -181,10 +181,22 @@ import ReactRegisterForm from '../components-react/ReactForm/ReactForm';
   }
 
   .home-content {
-    flex: 1 0 370px;
+    flex: 1 0 0;
     padding: 2rem;
   }
 
+  .home-banner {
+    flex: 1 0 0;
+    padding: 0 1rem;
+    height: 600px; /* CLS important */
+  }
+
+  @media screen and (max-width: 768px) {
+    .home-content {
+      flex: 0 0 100%;
+      margin: 0;
+    }
+  }
 
   .social-links {
     [data-icon] {
@@ -197,34 +209,19 @@ import ReactRegisterForm from '../components-react/ReactForm/ReactForm';
     }
 
     display: grid;
-    margin: 1rem auto -5px;
+    margin: 1rem 0;
+    max-width: 300px;
 
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0;
-
-    align-items: stretch;
-    place-items: center;
-    justify-items: center;
 
     & > a {
       cursor: pointer;
       width: 4rem;
 
-      @media (max-width: 768px) {
-        width: 3rem;
+      @media (max-width: 1024px) {
+        margin: 1rem auto;
       }
-    }
-  }
-
-  .home-banner {
-    flex: 1 0 0;
-    min-height: 520px; /* CLS important */
-  }
-
-  @media screen and (max-width: 768px) {
-    .home-content {
-      flex: 0 0 100%;
-      margin: 0;
     }
   }
 </style>
