@@ -36,7 +36,7 @@ their versions: `git --version`, `nodejs -v` and `npm -v`.
 
 ### Kick off a new Astro project
 
-`npm run create astro@latest`
+`npm create astro@latest`
 
 Choose your project name, include Typescript, initialise a Git repository.
 
