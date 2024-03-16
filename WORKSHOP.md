@@ -60,6 +60,15 @@ import treeImage from '../assets/images/tree-banner.webp';
 <Image src={treeImage} alt="Banner" />
 ```
 
+#### LCP image
+
+By default, Astro will lazy load our images, therefore in case our LCP element is an image we need to mark it as eager.
+
+```html
+
+<Image src={lcpImage} loading="eager" alt="LCP-Banner" />
+```
+
 ### Add astro-icon in order to gain access to svg icons
 
 Go into the project directory and run:
