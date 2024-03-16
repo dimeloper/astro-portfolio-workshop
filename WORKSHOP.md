@@ -40,6 +40,12 @@ their versions: `git --version`, `nodejs -v` and `npm -v`.
 
 Choose your project name, include Typescript, initialise a Git repository.
 
+## Running the project locally
+
+```shell
+npm run dev
+```
+
 ## Using the built-in astro image component
 
 Loading images in astro is fairly simple and if they are kept in `src/` Astro will transform, optimize and bundle them.
@@ -69,8 +75,8 @@ Now we can use icons as such:
 <Icon class="astro-icon" name="mdi:emoticon-outline" />
 ```
 
-## Running the project locally
+## Adding a react component
 
 ```shell
-npm run dev
+npm run astro add react
 ```

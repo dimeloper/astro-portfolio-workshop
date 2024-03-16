@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import meImage from '../assets/images/bulbasaur.jpeg';
 import treeImage from '../assets/images/tree-banner.webp';
 import Card from '../components/Card.astro';
+import ReactRegisterForm from '../components/ReactForm/ReactForm';
 ---
 
 <Layout title="Portfolio Workshop">
@@ -83,6 +84,13 @@ import Card from '../components/Card.astro';
               title="Astro Community"
               body="Come say hi to our amazing Discord community. ❤️"
       />
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-wrapper block">
+      <h2 class="entry-title section-title" id="contact">Contact Form</h2>
+      <ReactRegisterForm />
     </div>
   </div>
 </Layout>
