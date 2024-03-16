@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import { SubmitButton } from './ReactButton.tsx';
 
 import './form.css';
@@ -6,79 +6,67 @@ import './form.css';
 /**
  * React Form Component
  */
-class ReactRegisterForm extends Component {
-    constructor(props: any) {
-        super(props);
-        const open = false;
+export default function ReactForm() {
 
-        this.state = {
-            firstName: '',
-            lastName: '',
-            email: '',
-        };
+    const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '' });
 
-        this.firstNameChange = this.firstNameChange.bind(this);
-        this.lastNameChange = this.lastNameChange.bind(this);
-        this.emailChange = this.emailChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    firstNameChange(event: any) {
-        this.setState({
+    const firstNameChange = (event: any) => {
+        setFormState({
             firstName: event.target.value,
+            lastName: formState.lastName,
+            email: formState.email,
         });
-        console.log(event.target.value);
-    }
+    };
 
-    lastNameChange(event: any) {
-        this.setState({
+    const lastNameChange = (event: any) => {
+        setFormState({
             lastName: event.target.value,
+            firstName: formState.firstName,
+            email: formState.email,
         });
-    }
+    };
 
-    emailChange(event: any) {
-        this.setState({
+    const emailChange = (event: any) => {
+        setFormState({
             email: event.target.value,
+            lastName: formState.lastName,
+            firstName: formState.firstName,
         });
-    }
+    };
 
-    notifyUser() {
+    const notifyUser = () => {
         alert('Form submitted successfully!');
-    }
+    };
 
-    handleSubmit(event: any) {
+    const handleSubmit = (event: any) => {
         event.preventDefault();
-        this.notifyUser();
-    }
+        notifyUser();
+    };
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit} className="form">
-                <label htmlFor="fname">Name</label>
-                <input
-                    id="fname"
-                    type="text"
-                    value={this.state.firstName}
-                    onChange={this.firstNameChange}
-                />
-                <label htmlFor="lname">Last name</label>
-                <input
-                    id="lname"
-                    type="text"
-                    value={this.state.lastName}
-                    onChange={this.lastNameChange}
-                />
-                <label htmlFor="email">Email</label>
-                <input
-                    id="email"
-                    type="email"
-                    value={this.state.email}
-                    onChange={this.emailChange}
-                />
-                <SubmitButton />
-            </form>
-        );
-    }
+    return (
+        <form onSubmit={handleSubmit} className="form">
+            <label htmlFor="fname">Name</label>
+            <input
+                id="fname"
+                type="text"
+                value={formState.firstName}
+                onChange={firstNameChange}
+            />
+            <label htmlFor="lname">Last name</label>
+            <input
+                id="lname"
+                type="text"
+                value={formState.lastName}
+                onChange={lastNameChange}
+            />
+            <label htmlFor="email">Email</label>
+            <input
+                id="email"
+                type="email"
+                value={formState.email}
+                onChange={emailChange}
+            />
+            <SubmitButton />
+        </form>
+    );
 }
-
-export default ReactRegisterForm;

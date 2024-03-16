@@ -72,11 +72,37 @@ Then we will also need to add an icon set, in our case the Material Design Icons
 Now we can use icons as such:
 
 ```html
+
 <Icon class="astro-icon" name="mdi:emoticon-outline" />
 ```
 
-## Adding a react component
+## Adding a react/svelte/vue component
+
+In case we need to build an interactive component using a framework we know better, we can use the integrations Astro
+provides us with. See [related documentation](https://docs.astro.build/en/guides/integrations-guide/)
+
+For example if we want to include a react component we can do it as such:
 
 ```shell
 npm run astro add react
 ```
+
+Astro will take care of all the configuration adjustments,
+we only need to create our component and simply import it in
+the template.
+
+```javascript
+import ReactRegisterForm from '../components/ReactComponents/ReactForm';
+```
+
+```html
+
+<ReactComponent />
+```
+
+## Deploying our page on Netlify
+
+```shell
+npm run astro add netlify
+```
+
