@@ -34,13 +34,13 @@ export default function ReactForm() {
         });
     };
 
-    const notifyUser = () => {
-        alert('Form submitted successfully!');
+    const notifyBrowser = () => {
+        console.log('Form submitted successfully with state:', formState);
     };
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        notifyUser();
+        notifyBrowser();
     };
 
     return (

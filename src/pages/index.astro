@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import meImage from '../assets/images/bulbasaur.jpeg';
 import treeImage from '../assets/images/tree-banner.webp';
 import Card from '../components/Card.astro';
-import ReactRegisterForm from '../components/ReactForm/ReactForm';
+import ReactRegisterForm from '../components-react/ReactForm/ReactForm';
 ---
 
 <Layout title="Portfolio Workshop">
@@ -90,7 +90,7 @@ import ReactRegisterForm from '../components/ReactForm/ReactForm';
   <div class="section">
     <div class="section-wrapper block">
       <h2 class="entry-title section-title" id="contact">Contact Form</h2>
-      <ReactRegisterForm />
+      <ReactRegisterForm client:load />
     </div>
   </div>
 </Layout>

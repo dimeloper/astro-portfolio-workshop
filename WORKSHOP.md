@@ -92,12 +92,23 @@ we only need to create our component and simply import it in
 the template.
 
 ```javascript
-import ReactRegisterForm from '../components/ReactComponents/ReactForm';
+import ReactRegisterForm from '../components-react/ReactComponents/ReactForm';
 ```
 
 ```html
 
 <ReactComponent />
+```
+
+By default, Astro will automatically render every UI component to just HTML & CSS, stripping out all client-side
+JavaScript automatically.
+
+Turning any static UI component into an interactive island requires only a client:* directive. Astro then automatically
+builds and bundles your client-side JavaScript for optimized performance.
+
+```html
+
+<ReactComponent client:load />
 ```
 
 ### Deploying our page on Netlify
@@ -116,6 +127,7 @@ Voila! Our portfolio is now deployed and whenever we push a commit to main the l
 deployed too.
 
 ## Tooling Appendix
+
 - Astro [documentation](https://docs.astro.build/en/getting-started/)
 - Netlify [documentation](https://docs.netlify.com/)
 - Pagespeed insights: https://pagespeed.web.dev/
