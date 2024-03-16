@@ -8,20 +8,20 @@ import './form.css';
  */
 export default function ReactForm() {
 
-    const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '' });
+    const [formState, setFormState] = useState({ name: '', message: '', email: '' });
 
-    const firstNameChange = (event: any) => {
+    const nameChange = (event: any) => {
         setFormState({
-            firstName: event.target.value,
-            lastName: formState.lastName,
+            name: event.target.value,
+            message: formState.message,
             email: formState.email,
         });
     };
 
-    const lastNameChange = (event: any) => {
+    const messageChange = (event: any) => {
         setFormState({
-            lastName: event.target.value,
-            firstName: formState.firstName,
+            message: event.target.value,
+            name: formState.name,
             email: formState.email,
         });
     };
@@ -29,8 +29,8 @@ export default function ReactForm() {
     const emailChange = (event: any) => {
         setFormState({
             email: event.target.value,
-            lastName: formState.lastName,
-            firstName: formState.firstName,
+            message: formState.message,
+            name: formState.name,
         });
     };
 
@@ -45,19 +45,12 @@ export default function ReactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="form">
-            <label htmlFor="fname">Name</label>
+            <label htmlFor="name">Name</label>
             <input
-                id="fname"
+                id="name"
                 type="text"
-                value={formState.firstName}
-                onChange={firstNameChange}
-            />
-            <label htmlFor="lname">Last name</label>
-            <input
-                id="lname"
-                type="text"
-                value={formState.lastName}
-                onChange={lastNameChange}
+                value={formState.name}
+                onChange={nameChange}
             />
             <label htmlFor="email">Email</label>
             <input
@@ -65,6 +58,13 @@ export default function ReactForm() {
                 type="email"
                 value={formState.email}
                 onChange={emailChange}
+            />
+            <label htmlFor="message">Message</label>
+            <input
+                id="message"
+                type="text"
+                value={formState.message}
+                onChange={messageChange}
             />
             <SubmitButton />
         </form>

@@ -13,7 +13,7 @@ import ReactRegisterForm from '../components-react/ReactForm/ReactForm';
   <section id="home" class="section full-width-section">
     <div class="section-wrapper">
       <div class="home-banner">
-        <Image src={treeImage} alt="Banner" />
+        <Image fetchPriority="high" src={treeImage} alt="Banner" />
       </div>
       <div class="home-content">
         <h1 class="entry-title">John Doe</h1>
@@ -188,7 +188,6 @@ import ReactRegisterForm from '../components-react/ReactForm/ReactForm';
   .home-banner {
     flex: 1 0 0;
     min-height: 520px; /* CLS important */
-    height: 520px; /* CLS + safari important */
 
     @media (min-width: 1024px) {
       padding: 0 1rem;
