@@ -34,7 +34,7 @@ our Chrome dev tools as such:
 You can verify that the required tools are available by opening a new terminal and checking
 their versions: `git --version`, `nodejs -v` and `npm -v`.
 
-### Kick off a new Astro project
+### Kicking off a new Astro project
 
 `npm create astro@latest`
 
@@ -84,6 +84,14 @@ Now we can use icons as such:
 
 <Icon class="astro-icon" name="mdi:emoticon-outline" />
 ```
+
+### Install necessary UI dependencies
+
+In this project we are using scss features therefore we will need the sass dependency:
+`npm install sass -D`
+
+As for fonts we are importing open-sans, therefore we need to install the related dependency too:
+`npm install @fontsource/open-sans`
 
 ### Adding a react/svelte/vue component
 
